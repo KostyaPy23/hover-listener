@@ -1,0 +1,21 @@
+$border-color: #5c5c5c;
+$grid-cell-size: 20px;
+$table-size: 700px;
+
+.grid {
+  background: white;
+  border: 1px solid $border-color;
+  border-collapse: collapse;
+  margin: 0 auto;
+
+  .grid-row,
+  .grid-col {
+    padding: .5em;
+    border: 1px solid $border-color;
+  }
+
+  .grid-col {
+    width: $grid-cell-size;
+    height: $grid-cell-size;
+  }
+}

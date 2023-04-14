@@ -1,0 +1,10 @@
+<div class="mode-wrapper">
+  <select class="mode-select" [(ngModel)]="selectedPreset">
+    <option value="undefined" disabled selected hidden>Select your option</option>
+    <option *ngFor="let preset of presets" [value]="preset.field">
+      {{ preset.name }}
+    </option>
+  </select>
+
+  <button class="button" (click)="start()">START</button>
+</div>

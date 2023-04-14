@@ -1,0 +1,17 @@
+<ng-container *ngIf="grid">
+  <table class="grid">
+    <tbody>
+    <tr
+      class="grid-row"
+      *ngFor="let rows of grid; let row = index"
+    >
+      <td
+        class="grid-col"
+        *ngFor="let cell of rows; trackBy: trackByFn; let col = index"
+        [ngStyle]="{ 'background-color': cell === 1 ? COLOR_BLUE : COLOR_WHITE }"
+        (mouseenter)="onMouseEnter(row, col)"
+      ></td>
+    </tr>
+    </tbody>
+  </table>
+</ng-container>

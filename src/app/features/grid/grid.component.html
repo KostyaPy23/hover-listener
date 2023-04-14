@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="column">
+    <ng-container *ngIf="!(isHttpError$ | async); else error">
+      <app-grid-mode-selector
+        [presets]="presets"
+        (started)="onStart($event)"
+      ></app-grid-mode-selector>
+
+      <app-grid-cells
+        *ngIf="grid$ | async; let grid"
+        [grid]="grid"
+        (cellOnEnter)="onCellEnter($event)"
+      ></app-grid-cells>
+    </ng-container>
+  </div>
+
+  <div class="column">
+    <h2>Hover squares</h2>
+    <div class="info-box-container">
+      <app-grid-info-box [coordinates]="coordinates$ | async"></app-grid-info-box>
+    </div>
+  </div>
+</div>
+
+<ng-template #error>
+  <h3>Http Error occurred. Please try later.</h3>
+</ng-template>
